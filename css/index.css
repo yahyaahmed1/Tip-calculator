@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+* {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-size: 24px;
+  background-color: hsl(185, 41%, 84%);
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 97%;
+  justify-content: center;
+}
+.container img.logo {
+  margin-bottom: 50px;
+}
+.container form.card {
+  padding: 35px;
+  border-radius: 20px;
+  max-width: 750px;
+}
+.container form.card .form-side label {
+  font-size: 14px;
+  color: hsl(184, 14%, 56%);
+  display: block;
+  margin-bottom: 5px;
+}
+.container form.card .form-side input:not(.tip-btn) {
+  border: none;
+  background-color: hsl(189, 41%, 97%);
+  direction: rtl;
+  font-size: 18px;
+  color: hsl(183, 100%, 15%);
+  width: 100%;
+  padding: 5px 5px 5px 30px;
+  cursor: pointer;
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 5px;
+}
+.container form.card .form-side input#num-people:focus,
+.container form.card .form-side input#bill:focus {
+  outline: none;
+  border: 1px solid hsl(172, 67%, 45%);
+  transition: all 0.5s;
+}
+.container form.card .form-side .bill-field {
+  position: relative;
+}
+.container form.card .form-side .bill-field::before {
+  content: "";
+  background-image: url(../images/icon-dollar.svg);
+  width: 11px;
+  height: 17px;
+  position: absolute;
+  top: 38px;
+  left: 15px;
+  z-index: 3;
+}
+.container form.card .form-side .tip-options .tips-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.container form.card .form-side .tip-options .tip-btn {
+  width: 95px;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 15px;
+  transition: all 0.5s ease;
+}
+.container form.card .form-side .tip-options .tip-btn:hover {
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%);
+}
+.container form.card .form-side .tip-options .tip-btn:last-child {
+  border: none;
+  background-color: hsl(189, 41%, 97%);
+  text-align: right;
+  font-size: 18px;
+  color: hsl(183, 100%, 15%);
+  cursor: pointer;
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 5px;
+}
+.container form.card .form-side .tip-options .tip-btn:last-child:focus-visible {
+  outline: none;
+  border: 1px solid hsl(172, 67%, 45%);
+}
+.container form.card .form-side .tip-options .tip-btn:last-child::placeholder {
+  color: hsl(186, 14%, 43%);
+}
+.container form.card .form-side .tip-options .tip-btn.active {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  border: 1px solid transparent;
+}
+.container form.card .form-side .people-field {
+  position: relative;
+}
+.container form.card .form-side .people-field::before {
+  content: "";
+  background-image: url(../images/icon-person.svg);
+  width: 13px;
+  height: 16px;
+  position: absolute;
+  top: 39px;
+  left: 15px;
+  z-index: 3;
+}
+.container form.card .form-side .people-field .zero-error {
+  font-size: 12px;
+  color: hsl(0, 100%, 56%);
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.container .result-screen {
+  width: 100%;
+  height: 100%;
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 10px;
+  padding: 50px 25px 25px;
+  color: hsl(0, 0%, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .result-screen span.category {
+  font-size: 12px;
+}
+.container .result-screen span.category .grey {
+  color: hsl(184, 14%, 56%);
+}
+.container .result-screen .amount {
+  color: hsl(172, 67%, 45%);
+  font-size: 32px;
+}
+.container .result-screen .tip-for-person {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+.container .result-screen .total-for-person {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .result-screen button.rest-btn {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  opacity: 0.2;
+  transition: all 0.5s;
+}
+.container .result-screen button.rest-btn:hover {
+  background-color: hsl(185, 41%, 84%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: auto;
+  }
+  .container img.logo {
+    margin: 20px;
+  }
+  .container .result-screen {
+    padding: 25px;
+    margin-top: 25px;
+  }
+  .container form.card .form-side .tip-options .tips-btns {
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .container .result-screen .tip-for-person {
+    margin-bottom: 20px;
+  }
+  .container .result-screen button.rest-btn {
+    margin-top: 25px;
+  }
+}
+@media (max-width: 425px) {
+  .container form.card {
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
